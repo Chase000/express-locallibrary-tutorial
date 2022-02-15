@@ -13,7 +13,7 @@ var helmet = require('helmet');
 var app = express();
 
 const mongoose = require('mongoose');
-const mongoDB = 'mongodb+srv://Chase:YO3nAZD0KZ5gwEQC@cluster0.7sosz.mongodb.net/localLibrary?retryWrites=true&w=majority';
+const mongoDB = process.env.MONGODB_URI || 'mongodb+srv://Chase:YO3nAZD0KZ5gwEQC@cluster0.7sosz.mongodb.net/localLibrary?retryWrites=true&w=majority';
 mongoose.connect(mongoDB, { useNewUrlParser: true , useUnifiedTopology: true});
 mongoose.Promise = global.Promise;
 const db = mongoose.connection;
